@@ -2,17 +2,50 @@
 #include <stdlib.h>
 using namespace std;
 
+const int MAX_VAL = 20;
 
-void swap(int index1, int index2, int theArray[]) {
-    
-    int temp = theArray[index1];
-    theArray[index1] = theArray[index2];
-    theArray[index2] = temp;
+
+void combineArray(int arrayA[], int arrayB[]) {
+
+    int arraySizeA = sizeof(arrayA) / sizeof(arrayA[0]);
+    int arraySizeB = sizeof(arrayB) / sizeof(arrayB[0]);
+
+    for (int i = 0; i < arraySizeA; i++){
+        
+    }
 
 }
 
-void mergeSort(){
+void mergeSort(int numbers[]) {
+
+    //leftarray, rightarray
+    //combine mergeSort(leftarray) and mergeSort(Rightarray)
+
+    int arraySize = sizeof(numbers) / sizeof(numbers[0]);
+
+    int leftArray[MAX_VAL] = {};
+    int rightArray[MAX_VAL] = {};
     
+    if (arraySize > 1) {
+
+        for (int i = 0; i <= arraySize/2; i++) {
+            
+            leftArray[i] = numbers[i];
+
+        }
+
+        for (int j = arraySize/2 + 1; j < arraySize; j++) {
+            
+            rightArray[j] = numbers[j];
+
+        }
+
+        mergeSort(leftArray);
+        mergeSort(rightArray);
+        combineArray(leftArray, rightArray);
+       
+    }
+
 }
 
 
